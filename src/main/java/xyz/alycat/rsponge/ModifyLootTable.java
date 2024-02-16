@@ -1,6 +1,6 @@
 package xyz.alycat.rsponge;
 
-import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
+import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
 import net.minecraft.item.Item;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.condition.RandomChanceLootCondition;
@@ -9,8 +9,8 @@ import net.minecraft.util.Identifier;
 
 public class ModifyLootTable {
     public static void addItemToLootTable(Identifier tableId, Item item, Float rarity) {
-        LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
-            if (source.isBuiltin() && tableId.equals(id)) {
+        LootTableLoadingCallback.EVENT.register((resourceManager, lootManager, id, tableBuilder, source) -> {
+            if (tableId.equals(id)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .conditionally(RandomChanceLootCondition.builder(rarity))
                         .with(ItemEntry.builder(item));

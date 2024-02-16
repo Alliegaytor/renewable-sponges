@@ -4,18 +4,16 @@ import net.fabricmc.api.ModInitializer;
 
 import net.minecraft.item.Items;
 import net.minecraft.loot.LootTables;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import xyz.alycat.rsponge.ModConfig;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Main implements ModInitializer {
 	// This logger is used to write text to the console and the log file.
 	// It is considered best practice to use your mod id as the logger's name.
 	// That way, it's clear which mod wrote info, warnings, and errors.
 	public static final String MOD_ID = "rsponge";
-    public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
-	public static final ModConfig CONFIG = ModConfig.createAndLoad();
-	public static final Float rarity = CONFIG.rarity();
+    public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
+	public static final Float rarity = 0.16f;
 
 	@Override
 	public void onInitialize() {
