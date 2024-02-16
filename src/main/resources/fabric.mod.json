@@ -8,8 +8,9 @@
 		"Alliegaytor"
 	],
 	"contact": {
-		"homepage": "",
-		"sources": "https://github.com/Alliegaytor/renewable-sponges"
+		"homepage": "https://github.com/Alliegaytor/renewable-sponges",
+		"sources": "https://github.com/Alliegaytor/renewable-sponges",
+		"issues": "https://github.com/Alliegaytor/renewable-sponges/issues"
 	},
 	"license": "LGPL-3.0-only",
 	"icon": "assets/rsponge/icon.png",
