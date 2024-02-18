@@ -3,7 +3,7 @@
 	"id": "rsponge",
 	"version": "${version}",
 	"name": "Renewable Sponges",
-	"description": "Adds sponges to the fishing loot table",
+	"description": "Adds sponges to the fishing loot table.",
 	"authors": [
 		"Alliegaytor"
 	],
