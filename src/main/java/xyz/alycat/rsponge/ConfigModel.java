@@ -9,6 +9,9 @@ import io.wispforest.owo.config.annotation.RestartRequired;
 public class ConfigModel {
     // Client side
     // Server handles the rarity config, no need to sync
+    // Is multiplied by 100 and cast to int. Not an int for legacy config compatibility
     @RestartRequired
-    public float rarity = 0.16f;
+    public float rarity = 0.12f;
+    @RestartRequired
+    public boolean wetSponge = true;
 }
