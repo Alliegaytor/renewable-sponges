@@ -22,6 +22,6 @@ public class Main implements ModInitializer {
 			LOGGER.info(MOD_ID + ": you may want to lower the weight of the sponges :)");
 		}
 
-		ModifyLootTable.addItemToLootTable(LootTables.FISHING_GAMEPLAY, Items.SPONGE, weight);
+		ModifyLootTable.addItemToLootTable(LootTables.FISHING_GAMEPLAY, CONFIG.wetSponge() ? Items.WET_SPONGE : Items.SPONGE, weight);
 	}
 }

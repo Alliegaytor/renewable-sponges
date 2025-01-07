@@ -12,4 +12,6 @@ public class ConfigModel {
     // Is multiplied by 100 and cast to int. Not an int for legacy config compatibility
     @RestartRequired
     public float rarity = 0.12f;
+    @RestartRequired
+    public boolean wetSponge = true;
 }
