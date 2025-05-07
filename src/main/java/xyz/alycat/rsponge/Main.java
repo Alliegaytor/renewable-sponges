@@ -1,27 +1,38 @@
 package xyz.alycat.rsponge;
 
-import net.fabricmc.api.ModInitializer;
-import net.minecraft.item.Items;
-import net.minecraft.loot.LootTables;
+import com.mojang.logging.LogUtils;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.config.ModConfig;
+import net.neoforged.neoforge.client.gui.ConfigurationScreen;
+import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import xyz.alycat.rsponge.ModConfig;
+import xyz.alycat.rsponge.config.Config;
+import xyz.alycat.rsponge.loot.ModLootTableModifiers;
 
-public class Main implements ModInitializer {
-	public static final String MOD_ID = "rsponge";
-	private static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
-	private static final ModConfig CONFIG = ModConfig.createAndLoad();
-	private static final Integer weight = (int) (CONFIG.rarity() * 100);
 
-	@Override
-	public void onInitialize() {
-		// Display welcome
-		LOGGER.info(MOD_ID + ": adding sponges to fishing loot table, weight {}", weight);
+@Mod(Main.MODID)
+public class Main {
+	public static final String MODID = "rsponge";
+	public static final Logger LOGGER = LogUtils.getLogger();
 
-		if (weight >= 100) {
-			LOGGER.info(MOD_ID + ": you may want to lower the weight of the sponges :)");
-		}
+	public Main(IEventBus modEventBus, ModContainer modContainer) {
+		// Configuration
+		modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+		modContainer.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
 
-		ModifyLootTable.addItemToLootTable(LootTables.FISHING_GAMEPLAY, CONFIG.wetSponge() ? Items.WET_SPONGE : Items.SPONGE, weight);
+		NeoForge.EVENT_BUS.register(this);
+
+        ModLootTableModifiers.register(modEventBus);
 	}
+
+	@SubscribeEvent
+	public void onServerSetup(ServerStartingEvent event) {
+		LOGGER.info(MODID + ": adding sponges to fishing loot table");
+	}
+
 }

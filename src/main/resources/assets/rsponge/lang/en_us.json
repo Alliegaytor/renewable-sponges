@@ -1,6 +1,4 @@
 {
-  "text.config.rsponge.title": "Configuration",
-  "text.config.rsponge.option.rarity": "Sponge Fishing Reward Rarity",
-  "text.config.rsponge.option.wetSponge": "Sponge Wet",
-  "text.config.rsponge.option.wetSponge.tooltip": "Enabled: WET_SPONGE drops\nDISABLED: SPONGE drops"
+  "rsponge.configuration.SPONGE_ITEM": "WET_SPONGE",
+  "rsponge.configuration.SPONGE_ITEM.tooltip": "Enabled: WET_SPONGE drops\nDISABLED: SPONGE drops"
 }
