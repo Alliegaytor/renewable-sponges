@@ -7,11 +7,11 @@ import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.registry.RegistryKey;
 
 public class ModifyLootTable {
-    public static void addItemToLootTable(RegistryKey<LootTable> tableId, Item item, Integer weight) {
-        LootTableEvents.MODIFY.register((key, tableBuilder, source) -> {
-            if (source.isBuiltin() && tableId.equals(key)) {
-                tableBuilder.modifyPools(poolBuilder -> poolBuilder.with(ItemEntry.builder(item).weight(weight)));
-            }
-        });
-    }
+	public static void addItemToLootTable(RegistryKey<LootTable> tableId, Item item, Integer weight) {
+		LootTableEvents.MODIFY.register((key, tableBuilder, source) -> {
+			if (source.isBuiltin() && tableId.equals(key)) {
+				tableBuilder.modifyPools(poolBuilder -> poolBuilder.with(ItemEntry.builder(item).weight(weight)));
+			}
+		});
+	}
 }
