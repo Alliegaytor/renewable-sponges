@@ -16,13 +16,14 @@ import java.util.concurrent.CompletableFuture;
 public class ModGlobalLootModifierProvider extends GlobalLootModifierProvider {
 	public ModGlobalLootModifierProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
 		super(output, registries, Main.MODID);
+		replacing();
 	}
 
 	@Override
 	protected void start() {
 		this.add("sponge", new ModLootModifier(
 				new LootItemCondition[]{
-						new LootTableIdCondition.Builder(BuiltInLootTables.FISHING_TREASURE.location()).build(),
+						new LootTableIdCondition.Builder(BuiltInLootTables.FISHING.location()).build(),
 						LootItemRandomChanceCondition.randomChance(0.16f).build(),
 				},
 				Config.SPONGE_ITEM

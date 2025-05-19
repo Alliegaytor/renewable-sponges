@@ -39,7 +39,7 @@ public class ModLootModifier extends LootModifier {
 			}
 		}
 
-		generatedLoot.removeFirst(); // remove original loot
+//		generatedLoot.removeFirst(); // remove original loot
 		generatedLoot.add(new ItemStack(Config.SPONGE_ITEM));
 		return generatedLoot;
 	}

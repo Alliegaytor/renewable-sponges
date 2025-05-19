@@ -2,5 +2,5 @@
   "entries": [
     "rsponge:sponge"
   ],
-  "replace": false
+  "replace": true
 }

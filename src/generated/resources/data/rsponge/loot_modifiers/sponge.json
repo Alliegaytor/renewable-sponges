@@ -3,7 +3,7 @@
   "conditions": [
     {
       "condition": "neoforge:loot_table_id",
-      "loot_table_id": "minecraft:gameplay/fishing/treasure"
+      "loot_table_id": "minecraft:gameplay/fishing"
     },
     {
       "chance": 0.16,
