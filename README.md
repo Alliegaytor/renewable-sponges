@@ -8,6 +8,7 @@ It is technically not needed client-side if you join a server with this mod.
 
 By default, WET_SPONGE is added to the loot table, but it can be configured to SPONGE in the mod's configuration.
 
+Currently, supported versions of Minecraft are ~1.16.1, ~1.19.2, 1.20.x, 1.21.x on Fabric and ~1.21.4 on Neoforge.
 
 ## Links
 
@@ -19,7 +20,7 @@ https://modrinth.com/mod/renewable-sponges/versions
 Pairs well with my other mod [Water Resistance Potion](https://modrinth.com/mod/water-resistance-potion) that adds a potion which defaults to using sponges as an ingredient.
 
 ### Repos
-This git repo is hosted on these two hosts. Contributions to either are welcome.
+This git repo is hosted on these two git hosts. Contributions to either are welcome.
 
 https://codeberg.org/Alliegaytor/renewable-sponges
 https://github.com/Alliegaytor/renewable-sponges
